@@ -1,4 +1,4 @@
-const api = "http://www.omdbapi.com/?apikey=c85454b3";
+const api = "http://www.omdbapi.com/?i=tt3896198&apikey=22037589";
 let page = 1;
 let data = {};
 const content = document.querySelector(".content");
@@ -36,6 +36,15 @@ function insertCard(Details) {
   card.appendChild(year);
   content.appendChild(card);
 }
+/*const arrayData = [
+  "spider",
+  "titanic",
+  "anabelle",
+  "intersteller",
+  "batman",
+  "platform",
+  "jab we met",
+];*/
 function show() {
   document.getElementById("cards").style.visibility = "visible";
 }
@@ -64,6 +73,9 @@ function search() {
         pages.style.visibility = "hidden";
         downloadbutton.style.visibility = "hidden";
       }
+    })
+    .catch((err) => {
+      console.log("Api didn't fetch");
     });
 }
 

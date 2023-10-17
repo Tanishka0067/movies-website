@@ -1,9 +1,12 @@
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
    /* color: white; */
 }
+
 body{ 
     /* background-color: rgb(16, 15, 15);*/
 background: url("images/movies\ background.jpg");} 
@@ -22,6 +25,7 @@ nav{
        margin-bottom: 0;
        height: 3rem;
     }
+
 #searchbox{
     margin: 30px;
     padding: 10px;
@@ -101,7 +105,7 @@ img{
         font-size: 5vw;
        text-align: center;
        color: white;  
-       visibility: hidden;  
+       visibility: hidden;
   }
   .pages{
     display: flex;
