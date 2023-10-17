@@ -1,4 +1,4 @@
-const api = "http://www.omdbapi.com/?i=tt3896198&apikey=22037589";
+const api = "https://www.omdbapi.com/?i=tt3896198&apikey=22037589";
 let page = 1;
 let data = {};
 const content = document.querySelector(".content");
