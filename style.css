@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   /* color: white; */
+}
+body{ 
+    /* background-color: rgb(16, 15, 15);*/
+background: url("images/movies\ background.jpg");} 
+nav{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    }
+    .searchbar{
+        justify-content: flex-end;
+    }
+    svg{
+        margin: 30px;
+       margin-bottom: 0;
+       height: 3rem;
+    }
+#searchbox{
+    margin: 30px;
+    padding: 10px;
+    width: 30rem;
+  border: 3px solid gray;
+  margin-bottom: 0;
+  border-radius: 4px;
+}
+.download{
+    padding: 10px;
+    background-color: rgb(4, 155, 75);
+    margin: 30px;
+    margin-bottom: 0;
+    color: white;
+    font-weight: 600;
+    word-spacing: 0.2;
+    cursor: pointer;
+    visibility: hidden;
+}
+.content{
+  margin: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+
+  flex-wrap: wrap;
+}
+
+.cards {
+    height: 400px;
+    aspect-ratio: 3/4;
+    color: white;
+    background-color: rgb(43, 43, 43);
+    padding: 10px;
+    border-radius: 20px;
+    /* object-fit: cover; */
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    text-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 5px 5px 5px rgb(32, 30, 30);
+    /* visibility: hidden; */
+}
+img{
+    max-height:300px;
+    margin: auto;
+
+}
+.cards h1{
+    font-size: 1.4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.card h3{
+    font-size: 1rem;
+}
+.loader {
+    border: 4px solid #616161; 
+    border-top: 4px solid #ffffff;  
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+    align-self: center;
+    margin: auto;
+    visibility: hidden;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .default{
+        font-size: 5vw;
+       text-align: center;
+       color: white;  
+       visibility: hidden;  
+  }
+  .pages{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    gap: 8px;
+    justify-content: center;
+    visibility: hidden;
+  }
+ button{
+    padding: 10px;
+    background: rgb(182, 181, 181);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgb(61, 61, 61);
+  margin-bottom: 50px;
+cursor: pointer;
+ } 
+ button:focus{
+    background-color: rgb(161, 162, 163);
+ }
