@@ -8,6 +8,7 @@ const defaultText = document.querySelector(".default");
 const previousButton = document.querySelector(".previous");
 const nextButton = document.querySelector(".next");
 const downloadbutton = document.querySelector(".download");
+const text = document.querySelector(".txt");
 function insertCard(Details) {
   let image = new Image();
   image.src = Details["Poster"];
@@ -36,6 +37,7 @@ function search() {
     .then((response) => response.json())
     .then((dta) => {
       data = dta;
+      text.style.display = "none";
       loader.style.visibility = "hidden";
       pages.style.visibility = "visible";
       // Move the console.log inside this .then() block
@@ -82,7 +84,6 @@ function downloadJSON() {
   URL.revokeObjectURL(a.href);
 }
 
-
 //  function homedisp(value){
 // try{
 //   const response = await fetch(`${api}&s=${value}`)
@@ -91,7 +92,7 @@ function downloadJSON() {
 //       data["homedisp"].forEach((element) => {
 //         insertCard(element);
 //       });
-//     } 
+//     }
 //   }
 // }
 // function display(){
@@ -129,5 +130,3 @@ document.querySelector(".searchbar").addEventListener("input", search);
 previousButton.addEventListener("click", previous);
 nextButton.addEventListener("click", next);
 downloadbutton.addEventListener("click", downloadJSON);
-
-

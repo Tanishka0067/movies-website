@@ -127,3 +127,12 @@ cursor: pointer;
  button:focus{
     background-color: rgb(161, 162, 163);
  }
+ .txt{
+  margin: 8rem;
+  font-size: 3rem;
+  text-wrap: wrap;
+  text-align: center;
+  color: white;
+  text-shadow: 4px 2px 10px #474646;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
