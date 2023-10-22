@@ -8,19 +8,6 @@ const defaultText = document.querySelector(".default");
 const previousButton = document.querySelector(".previous");
 const nextButton = document.querySelector(".next");
 const downloadbutton = document.querySelector(".download");
-function downloadJSON() {
-  const jsonString = JSON.stringify(data, null, 2);
-
-  const blob = new Blob([jsonString], { type: "application/json" });
-
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-
-  a.download = "data.json";
-  a.click();
-  URL.revokeObjectURL(a.href);
-}
-
 function insertCard(Details) {
   let image = new Image();
   image.src = Details["Poster"];
@@ -36,20 +23,12 @@ function insertCard(Details) {
   card.appendChild(year);
   content.appendChild(card);
 }
-/*const arrayData = [
-  "spider",
-  "titanic",
-  "anabelle",
-  "intersteller",
-  "batman",
-  "platform",
-  "jab we met",
-];*/
+
 function show() {
   document.getElementById("cards").style.visibility = "visible";
 }
 function search() {
-  document.body.style.background = "rgb(16, 10, 15)";
+  // document.body.style.background = "rgb(16, 10, 15)";
   content.innerHTML = "";
   loader.style.visibility = "visible";
   const searchValue = document.getElementById("searchbox").value;
@@ -91,8 +70,64 @@ function previous() {
   console.log(page);
   search();
 }
+function downloadJSON() {
+  const jsonString = JSON.stringify(data, null, 2);
 
+  const blob = new Blob([jsonString], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+
+  a.download = "data.json";
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+
+//  function homedisp(value){
+// try{
+//   const response = await fetch(`${api}&s=${value}`)
+//   const data = response.json()
+//     if (data["Response"] == "True") {
+//       data["homedisp"].forEach((element) => {
+//         insertCard(element);
+//       });
+//     } 
+//   }
+// }
+// function display(){
+//   const randomDisplay = randomdisp(arrayData);
+//  await homedisp(randomDisplay);
+
+// }
+// display();
+/*function randomdisp(array){
+  const randomvalue = Math.floor(Math.random()*array.length);
+  return array[randomvalue];
+}
+const arrayData = [
+  "spider",
+  "titanic",
+  "anabelle",
+  "intersteller",
+  "batman",
+  "platform",
+  "jab we met",
+];
+function home(){
+for(let i=1;i<7;i++){
+   ( fetch('api${i}&s=${randomdisp(arrayData)}')
+  .then((response)=>{return response.json()}))
+  console.log(data);
+      if (data["response"] == "True") 
+      data["home"].forEach((element) => {
+        insertCard(element);
+        
+})}
+}
+home();*/
 document.querySelector(".searchbar").addEventListener("input", search);
 previousButton.addEventListener("click", previous);
 nextButton.addEventListener("click", next);
 downloadbutton.addEventListener("click", downloadJSON);
+
+
